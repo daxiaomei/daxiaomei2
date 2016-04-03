@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> 广告的弹出 </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+
+  <style>
+*{margin:0;padding:0;}
+.content{width:960px;height:1440px;background:#ccc;color:#000;font-size:36px;text-align:center;margin:0 auto;position:relative;}
+.tipCon{position:fixed;background:#efefef;color:#000;font-size:16px;text-align:center;bottom:0;right:0;}
+.clickMe{height:24px;background:#CCC;line-height:24px;}
+.showPic{display:none;}
+.clickMe{position:relative; }
+.clickMe a{background:url(icon.jpg) no-repeat -399px -19px;width:16px;height:16px;display:none;position:absolute; top:5px; right:5px;}
+.clickMe a:hover{background-position:-343px -19px;}
+
+.show{
+
+ display:block;
+}
+
+.hide{
+
+ display:none;
+
+}
+
+</style>
+<script>
+window.onload = function(){
+
+    var $ = function(id){
+	
+	 return document.getElementById(id);
+	
+	}
+
+	$("clickMe").onmouseover = function(){
+		  $("showPic").style.display = "block";
+		  $("closeBtn").style.display= 'block';
+		}
+	$("closeBtn").onclick = function(){
+		$("showPic").style.display = "none";
+		$("closeBtn").style.display = "none";
+	}
+}
+</script>
+</head>
+
+<body>
+<div class="content">网页内容</div>
+<div class="tipCon" id="tipCon">
+  <div class="clickMe" id="clickMe">猜猜我有啥？<a href="javascrip:void(0);" id="closeBtn"></a></div>
+  <div class="showPic" id="showPic"><img src="snow.gif" /></div>
+</div>
+
+  
+ </body>
+</html>
